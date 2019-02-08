@@ -17,7 +17,7 @@ Object.defineProperty(Vue.prototype, '$ssrContext', {
     return this.$vnode && this.$vnode.ssrContext
   }
 })
-//原型定义属性 FunctionalRenderContext
+//定义属性 FunctionalRenderContext
 // expose FunctionalRenderContext for ssr runtime helper installation
 Object.defineProperty(Vue, 'FunctionalRenderContext', {
   value: FunctionalRenderContext
