@@ -53,6 +53,7 @@
         console.log('target:', e.target);
         console.log('currentTarget', e.currentTarget)
         console.log('事件B冒泡')
+        //通过e.target 可以拿到点击的子节点的属性 
         console.log(e.target.attributes.pid.nodeValue)
     })
     
