@@ -1,0 +1,61 @@
+<!-- 事件模型 事件委托 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #out {
+            padding: 20px;
+            background-color: #ccc;
+        }
+
+        #inner1 {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="out">
+        <div id='inner1' pid="1222">
+            Click
+        </div>
+    </div>
+</body>
+<script>
+    //相关文章  http://blog.jgchen.xin/detail/99
+    //addEventListener第三个参数指定事件绑定在哪条路上，false为冒泡阶段，true为捕获阶段。
+    var a = document.querySelector('div#out')
+    var b = document.querySelector('div#inner1')
+    //html->body->目标->body->html
+    //捕获->目标（只是到达点击的那个目标元素 就没有继续深入了）->冒泡
+    //currentTarget始终是监听事件者，而target是事件的真正发出者
+    a.addEventListener('click', function (e) {
+        console.log('target:', e.target);
+        console.log('currentTarget', e.currentTarget)
+        console.log('事件A捕获')
+    }, true)
+    b.addEventListener('click', function (e) {
+        console.log('target:', e.target);
+        console.log('currentTarget', e.currentTarget)
+        console.log('事件B捕获')
+    }, true)
+    a.addEventListener('click', function (e) {
+        console.log('target:', e.target);
+        console.log('currentTarget', e.currentTarget)
+        console.log('事件A冒泡')
+    })
+    b.addEventListener('click', function (e) {
+        console.log('target:', e.target);
+        console.log('currentTarget', e.currentTarget)
+        console.log('事件B冒泡')
+        console.log(e.target.attributes.pid.nodeValue)
+    })
+    
+</script>
+
+</html>

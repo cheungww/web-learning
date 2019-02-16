@@ -1,0 +1,27 @@
+{
+    "name": "Communication-basics",
+    "version": "1.0.0",
+    "description": "js通信类基础",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev":"nodemon server.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/jgchenu/Communication-basics.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/jgchenu/Communication-basics/issues"
+    },
+    "homepage": "https://github.com/jgchenu/Communication-basics#readme",
+    "dependencies": {
+      "koa": "^2.5.1",
+      "koa-body": "^4.0.4",
+      "koa-router": "^7.4.0",
+      "koa2-cors": "^2.0.5"
+    }
+  }

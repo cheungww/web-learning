@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax</title>
+</head>
+
+<body>
+    <script src="./ajax.js"></script>
+    <script>
+        //这个是ajax的get跟post请求demo
+        ajax({
+            method: 'post',
+            url: 'http://127.0.0.1:3000/ajax',
+            data: {
+                name: 'jgchen',
+                stuNo: 2016130201,
+                method: 'post'
+            },
+            success(res) {
+                console.log('POST success:',res);
+            },
+            error(err) {
+                console.log(err);
+            }
+        })
+        ajax({
+            method: 'GET',
+            url: 'http://127.0.0.1:3000/ajax',
+            data: {
+                name: 'jgchen',
+                stuNo: 2016130201,
+                method: 'get'
+            },
+            success(res) {
+                console.log('GET success:',res);
+            },
+            error(err) {
+                console.log(err);
+            }
+        })
+        //这个是jsonp的请求demo
+        jsonp({
+            url: 'http://127.0.0.1:3000/jsonp',
+            jsonp: 'callback',
+            data: {
+                name: 'jgchen',
+                stuNo: 2016130201,
+                method: 'jsonp'
+            },
+            success(res) {
+                console.log('jsonp success:',res);
+            },
+            error(err) {
+                console.log(err);
+            }
+        })
+    </script>
+</body>
+
+</html>
