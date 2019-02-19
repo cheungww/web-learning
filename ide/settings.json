@@ -1,0 +1,47 @@
+{
+
+    "sync.gist": "b50985e8cfbf88e526856f2606a093e8",
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false,
+    "sync.removeExtensions": true,
+    "sync.syncExtensions": true,
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.lastUpload": "",
+    "sync.lastDownload": "",
+    "sync.forceDownload": false,
+    "team.showWelcomeMessage": false,
+    "emmet.triggerExpansionOnTab": true,
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "files.associations": {
+        "*.wpy": "vue"
+    },
+    "eslint.autoFixOnSave": true, // 每次保存的时候将代码按eslint格式进行修复
+    "prettier.eslintIntegration": true, //让prettier使用eslint的代码格式进行校验
+    "prettier.semi": false, //去掉代码结尾的分号
+    "prettier.singleQuote": true, //使用单引号替代双引号
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": false, //让函数(名)和后面的括号之间加个空格
+    "vetur.format.defaultFormatter.js": "vscode-typescript", //让vue中的js按编辑器自带的ts格式进行格式化
+    "eslint.validate": [ //开启对.vue文件中错误的检查
+    "javascript",
+    "javascriptreact",
+    {
+    "language": "html",
+    "autoFix": true
+    },
+    {
+    "language": "vue",
+    "autoFix": true
+    }
+    ],
+    "git.autofetch": true,
+    "vetur.validation.template": false,
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "workbench.editor.showTabs": true,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.sideBar.location": "left",
+    "window.openFilesInNewWindow": "on",
+    
+}

@@ -4,7 +4,11 @@ const cors = require('koa2-cors');
 const koaBody = require('koa-body');
 const app = new Koa;
 let home = Router();
-app.use(cors());
+app.use(async(ctx,next)=>{
+    ctx.set('Access-Control-Allow-Origin', 'http://127.0.0.1:58014');
+    await next();
+})
+// app.use(cors());
 app.use(koaBody())
 home.get('/', async (ctx) => {
     return ctx.body = {
@@ -15,12 +19,15 @@ home.get('/', async (ctx) => {
 })
 
 home.get('/ajax', async (ctx) => {
+    console.log('get')
     return ctx.body = {
         code: 200,
         data: ctx.request.query
     }
 })
 home.post('/ajax', async (ctx) => {
+    console.log('post')
+    ctx.set('Access-Control-Allow-Origin', 'http://127.0.0.1:58014');
     return ctx.body = {
         code: 200,
         data: ctx.request.body

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h3 style="background-color: #fff;">子元素是float元素时，不参与计算，父元素红色背景不显示</h3>
+        <section id="float">
+            <style>
+                #float{
+                    background-color: red;
+                }
+                #float .float{
+                    float: left;                        
+                }
+                #float:after{
+                    content: "";
+                    /* display: inline-block  设置bfc隔绝开 但是这样会撑开父元素的高度*/ 
+                }
+            </style>        
+            <div class="float">我是浮动元素,子元素是浮动元素的时候，高度计算没有包含进来，此时父级元素高度为0</div>
+        </section>
+        <h3 style="background-color: #fff;">BFC子元素即使是float也会参与计算，父元素为BFC，背景为红色</h3>
+        <section id="float2">
+            <style>
+                #float2{
+                    background-color: red;
+                    overflow: hidden;/*创建BFC*/
+                }
+                #float2 .float{
+                    float: left;                
+                }
+                
+            </style>        
+            <div class="float">我是浮动元素,BFC子元素是浮动元素的时候，参与计算，此时父级元素高度是21px;</div>
+        </section>
+</body>
+</html>

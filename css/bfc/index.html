@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BFC</title>
+    <style>
+            #margin{
+                background-color: red;
+                overflow: hidden;/*创建BFC*/
+            }
+            #margin p{
+                margin: 5px auto 25px;
+                background-color: blue;
+            }
+        </style>
+</head>
+<body>
+        <section id="margin">
+            <h3 style="background-color: #fff;">BFC垂直方向边距重叠，margin: 5px auto 25px;</h3>
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            
+            <h3 style="background-color: #fff;">清除重叠，给子元素增加一个父元素f，给他f创建一个BFC</h3>
+            <p>1</p>
+            <div style="overflow: hidden;background-color: yellow;">
+                <p>2</p>
+            </div>        
+            <p>3</p>
+            </section>  
+</body>
+</html>
