@@ -10,11 +10,23 @@
 
 <body>
     <script>
+        /*
+        https://github.com/jgchenu/web-learning/tree/master/js/event-model?name=1&key=2#/
+          window.location.search==='?name=1&key=2'
+          window.location.hash==='#/'
+        */
         function queryObject() {
             var query = {};
-            var search = window.location.search;
-            var items=search.substr(1);
+            var items = window.location.search.substr(1).split('&')
+            if(!items[0]) return query;
+            for (var item of items) {
+                var arr = item.split('=');
+                query[arr[0]] = arr[1]
+            }
+            return query
         }
+        console.log(queryObject())
+        console.log(window.location.hash)
     </script>
 </body>
 
