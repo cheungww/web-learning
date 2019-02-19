@@ -12,7 +12,6 @@ function insertSort(arr){
         while(preIndex>=0&&arr[preIndex]>current){
             arr[preIndex+1]=arr[preIndex]
             preIndex--;
-            console.log(arr)
         }
         arr[preIndex+1]=current;
     }
